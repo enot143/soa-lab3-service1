@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.wildfly.transaction:wildfly-transaction-client:1.1.9.Final">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/transaction/wildfly-transaction-client/1.1.9.Final/wildfly-transaction-client-1.1.9.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/transaction/wildfly-transaction-client/1.1.9.Final/wildfly-transaction-client-1.1.9.Final-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/transaction/wildfly-transaction-client/1.1.9.Final/wildfly-transaction-client-1.1.9.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

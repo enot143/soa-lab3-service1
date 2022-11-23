@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.wildfly.wildfly-http-client:wildfly-http-client-common:1.0.20.Final">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/wildfly-http-client/wildfly-http-client-common/1.0.20.Final/wildfly-http-client-common-1.0.20.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/wildfly-http-client/wildfly-http-client-common/1.0.20.Final/wildfly-http-client-common-1.0.20.Final-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wildfly/wildfly-http-client/wildfly-http-client-common/1.0.20.Final/wildfly-http-client-common-1.0.20.Final-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
