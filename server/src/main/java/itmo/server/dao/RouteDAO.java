@@ -99,7 +99,7 @@ public class RouteDAO {
         return (List<Route>) query.getResultList();
     }
 
-    //todo
+
     private LocalDate toDate(String s){
         return LocalDate.parse(s, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }

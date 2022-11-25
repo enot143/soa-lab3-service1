@@ -24,18 +24,17 @@ public class RouteResource {
     ObjectMapper mapper = new ObjectMapper();
 
     @EJB
-    RouteService routeService;// = getFromEJBPool("java:global/server/RouteServiceImpl!itmo.server.services.RouteService");
+    RouteService routeService = getFromEJBPool("ejb:/soa-3-1.0-SNAPSHOT/RouteServiceImpl!itmo.server.services.RouteService");
 
     public RouteResource() throws NamingException {
     }
 
     private RouteService getFromEJBPool(String name) throws NamingException {
         Properties jndiProperties = new Properties();
-        jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY,  WildFlyInitialContextFactory.class.getName());
+        jndiProperties.put(Context.INITIAL_CONTEXT_FACTORY, WildFlyInitialContextFactory.class.getName());
         final Context context = new InitialContext(jndiProperties);
         return (RouteService) context.lookup(name);
     }
-
 
     HashMap<String, String> filterParameters = new HashMap<>();
 
@@ -67,7 +66,7 @@ public class RouteResource {
                                     @QueryParam("to_x") String toX,
                                     @QueryParam("to_y") String toY,
                                     @QueryParam("to_z") String toZ
-                                 ) throws JsonProcessingException {
+    ) throws JsonProcessingException {
         putParameter("id", id);
         putParameter("name", name);
         putParameter("distance", distance);
@@ -89,7 +88,7 @@ public class RouteResource {
     }
 
     private void putParameter(String k, String v) {
-        if (v != null && !v.isEmpty()){
+        if (v != null && !v.isEmpty()) {
             filterParameters.put(k, v);
         }
     }
@@ -97,7 +96,7 @@ public class RouteResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public void addRoute(@Valid RouteDto routeDto){
+    public void addRoute(@Valid RouteDto routeDto) {
         routeService.addRoute(routeDto);
     }
 
@@ -112,7 +111,7 @@ public class RouteResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}/")
-    public void updateRoute(@PathParam("id") Integer id, @Valid RouteDto routeDto){
+    public void updateRoute(@PathParam("id") Integer id, @Valid RouteDto routeDto) {
         routeService.updateRoute(id, routeDto);
     }
 
@@ -120,7 +119,7 @@ public class RouteResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/count/distance/equals/{distance}")
-    public long countRoutesDistanceEq(@PathParam("distance") int distance){
+    public long countRoutesDistanceEq(@PathParam("distance") int distance) {
         return routeService.countDistanceEquals(distance);
     }
 
@@ -128,7 +127,7 @@ public class RouteResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/count/distance/greater/{distance}")
-    public long countRoutesDistanceGt(@PathParam("distance") int distance){
+    public long countRoutesDistanceGt(@PathParam("distance") int distance) {
         return routeService.countDistanceGreater(distance);
     }
 
@@ -136,7 +135,7 @@ public class RouteResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/name/contains/{substrInName}")
-    public List<Route> countRoutesDistanceGt(@PathParam("substrInName") String substr){
+    public List<Route> countRoutesDistanceGt(@PathParam("substrInName") String substr) {
         return routeService.findNameContainsSubstr(substr);
     }
 }

@@ -81,5 +81,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.0" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jboss.ejb3:jboss-ejb3-ext-api:2.3.0.Final" level="project" />
   </component>
 </module>

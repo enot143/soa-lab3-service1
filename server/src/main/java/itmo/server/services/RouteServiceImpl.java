@@ -10,6 +10,7 @@ import itmo.server.entities.Coordinate;
 import itmo.server.entities.Location;
 import itmo.server.entities.Route;
 import itmo.server.utils.FilterSortUtil;
+import org.jboss.ejb3.annotation.Pool;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -27,6 +28,7 @@ import java.util.logging.Logger;
 
 @Stateless
 @Remote(value = RouteService.class)
+@Pool(value="mypool")
 public class RouteServiceImpl implements RouteService {
     private static Logger log = Logger.getLogger(SessionBean.class.getName());
 
